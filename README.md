@@ -1,4 +1,4 @@
-mas-dev_dependencies
+mas-development_dependencies
 ====================
 
 Development dependencies management and setup
