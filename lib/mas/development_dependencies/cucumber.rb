@@ -3,6 +3,7 @@ require 'capybara'
 require 'capybara-screenshot'
 require 'capybara-screenshot/cucumber'
 require 'capybara/poltergeist'
+require 'site_prism'
 require 'timecop'
 
 ActionController::Base.allow_rescue = false
