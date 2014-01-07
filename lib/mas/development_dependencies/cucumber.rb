@@ -6,6 +6,8 @@ require 'capybara/poltergeist'
 require 'site_prism'
 require 'timecop'
 
+Time.zone = 'London'
+
 ActionController::Base.allow_rescue = false
 
 if defined?(ActiveRecord)
