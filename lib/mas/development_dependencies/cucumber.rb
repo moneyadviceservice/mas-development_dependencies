@@ -16,4 +16,6 @@ end
 
 Capybara.javascript_driver = :poltergeist
 
-
+After do
+  Timecop.return
+end
