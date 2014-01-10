@@ -2,7 +2,9 @@ require 'rspec/rails'
 require 'shoulda-matchers'
 require 'timecop'
 
-Time.zone = 'Europe/London'
+# this seems to be required for the CI to work properly
+ENV['TZ'] = 'Europe/London'
+Time.zone = 'London'
 
 # path relative to the Dummy app, which is by convention at spec/dummy
 Dir[Rails.root.join('./../support/**/*.rb')].each { |f| require f }
