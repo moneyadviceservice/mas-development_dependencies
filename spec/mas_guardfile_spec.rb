@@ -14,7 +14,7 @@ describe 'Mas Guardfile' do
 
     end
 
-    describe 'When providing as options as sass plugin identifier' do
+    describe 'When providing an options as sass plugin identifier' do
       describe 'And MAS provides a defaut config' do
         it 'only configures that provided plugin' do
           expect_any_instance_of(Guard::Dsl).to     receive(:guard).with('sass', input: 'app/assets/stylesheets', output: 'public/stylesheets')
