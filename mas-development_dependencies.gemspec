@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'shoulda-matchers'
   spec.add_dependency 'site_prism'
   spec.add_dependency 'timecop'
+  spec.add_dependency 'guard'
   spec.add_dependency 'guard-sass'
   spec.add_dependency 'guard-livereload'
   spec.add_dependency 'rack-livereload'
