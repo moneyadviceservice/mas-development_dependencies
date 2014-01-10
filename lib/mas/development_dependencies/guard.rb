@@ -10,7 +10,10 @@ module Guard
         MAS_DEFINITIONS.each { |arg| send arg }
       else
         args.each do |arg|
-          next unless MAS_DEFINITIONS.include?(arg.to_sym)
+          unless MAS_DEFINITIONS.include?(arg.to_sym)
+            ::Guard::UI.warning("No default MAS configuration for plugin \"#{arg}\"")
+            next
+          end
           send arg
         end
       end

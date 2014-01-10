@@ -25,9 +25,10 @@ describe 'Mas Guardfile' do
       end
 
       describe 'And MAS does not provide defaults for one of these plugins' do
-        it 'siltently skips unknown plugin and configures the known ones' do
+        it 'warns for any unknown plugins and configures the known ones' do
           expect_any_instance_of(Guard::Dsl).to     receive(:guard).with('livereload')
           expect_any_instance_of(Guard::Dsl).not_to receive(:guard).with('fancy_guard_plugin')
+          expect(Guard::UI).to receive(:warning).with('No default MAS configuration for plugin "fancy_guard_plugin"')
 
           Guard::Dsl.new.mas_guard :fancy_guard_plugin, :livereload
         end
