@@ -8,6 +8,7 @@ Time.zone = 'London'
 
 # path relative to the Dummy app, which is by convention at spec/dummy
 Dir[Rails.root.join('./../support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('./../factories/**/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods if defined?(FactoryGirl)
