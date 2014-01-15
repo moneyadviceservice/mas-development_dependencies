@@ -18,6 +18,11 @@ else
   Cucumber::Rails::Database.autorun_database_cleaner = false
 end
 
+if defined?(FactoryGirl)
+  Dir[Rails.root.join('./../factories/**/*.rb')].each { |f| require f }
+  World(FactoryGirl::Syntax::Methods)
+end
+
 Capybara.javascript_driver = :poltergeist
 
 After do
