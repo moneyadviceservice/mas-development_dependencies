@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.0'
 gem 'coffee-rails'
+gem 'jquery-rails'
 
 group :test, :development do
   gem 'mas-development_dependencies', path: '../../'
