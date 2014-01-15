@@ -24,6 +24,12 @@ module MAS
             desc 'Run all features'
             task :all => [:ok, :wip]
           end
+
+          # In case we don't have the generic Rails test:prepare hook, append a
+          # no-op task that we can depend upon.
+          task 'test:prepare' do
+          end
+
           desc 'Alias for cucumber:ok'
           task :cucumber => 'cucumber:ok'
 
