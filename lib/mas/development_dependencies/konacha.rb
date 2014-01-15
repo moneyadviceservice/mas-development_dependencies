@@ -9,6 +9,10 @@ module MAS
           config.konacha.driver = :poltergeist
         end
 
+        generators do
+          require File.expand_path('../../../generators/konacha/install', __FILE__)
+        end
+
         rake_tasks do
           namespace 'spec' do
             desc 'Run the code examples in spec/javascript'
