@@ -1,4 +1,5 @@
 require 'guard'
+require 'guard/cucumber'
 require 'guard/livereload'
 require 'guard/rspec'
 require 'guard/sass'
