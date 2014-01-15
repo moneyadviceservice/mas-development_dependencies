@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'factory_girl_rails', '~> 4.0'
   spec.add_dependency 'guard'
   spec.add_dependency 'guard-livereload'
+  spec.add_dependency 'guard-rspec'
   spec.add_dependency 'guard-sass'
   spec.add_dependency 'konacha', '>= 3.0'
   spec.add_dependency 'poltergeist', '~> 1.3'

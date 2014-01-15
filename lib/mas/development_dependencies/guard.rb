@@ -1,5 +1,6 @@
 require 'guard'
 require 'guard/livereload'
+require 'guard/rspec'
 require 'guard/sass'
 
 module MAS
