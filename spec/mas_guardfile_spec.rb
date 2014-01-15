@@ -1,4 +1,5 @@
-require 'spec_helper'
+require_relative './spec_helper'
+
 require 'mas/development_dependencies/guard'
 
 describe 'Mas Guardfile' do
