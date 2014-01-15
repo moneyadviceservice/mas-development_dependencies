@@ -1,48 +1,60 @@
-mas-development_dependencies
-============================
+# MAS Development Dependencies
 
-This gem provides shared setup and development dependencies management for Money Advice Service projects. It
-provides common test framework setup and rake tasks to run tests.
+This gem provides shared setup and development dependencies management for
+Money Advice Service projects. It provides common test framework setup and
+Rake tasks to run tests.
 
-Content
-=======
+## Content
 
 The gem provides setup for:
 
-* Cucumber
-* RSpec
-* Konacha
+* [Cucumber]
+* [RSpec]
+* [Konacha]
 
-Instalation
-===========
+## Installation
 
 Add the gem in the Gemfile:
 
-```Ruby
+```ruby
 group :development, :test do
   gem 'mas-development_dependencies'
 end
 ```
 
-Cucumber
-========
+## Cucumber
 
-The ```features/support/env.rb``` file should include the shared setup: 
+Run the generator:
 
-```Ruby 
-require 'mas/development_dependencies/cucumber/env'
+```sh
+$ rails generate money_advice_service:cucumber:install
 ```
 
-Custom project specific setup can follow after.
+You can then add custom project specific setup.
 
 
-RSpec
-=====
+## RSpec
 
-The ```spec/spec_helper.rb``` file should include the shared setup:
+Run the generator:
 
-```Ruby 
-require 'mas/development_dependencies/rspec/spec_helper'
+```sh
+$ rails generate money_advice_service:rspec:install
 ```
 
-Custom project specific setup can follow after.
+You can then add custom project specific setup.
+
+
+## Konacha
+
+Run the generator:
+
+```sh
+$ rails generate money_advice_service:konacha:install
+```
+
+You can then add custom project specific setup.
+
+
+[cucumber]: https://github.com/cucumber/cucumber
+[konacha]: https://github.com/jfirebaugh/konacha
+[rspec]: https://github.com/rspec
