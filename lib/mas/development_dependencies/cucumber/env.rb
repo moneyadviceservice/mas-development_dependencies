@@ -1,4 +1,5 @@
 require 'cucumber/rails'
+
 require 'capybara'
 require 'capybara-screenshot'
 require 'capybara-screenshot/cucumber'
