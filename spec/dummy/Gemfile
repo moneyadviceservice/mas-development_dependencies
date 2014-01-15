@@ -4,9 +4,7 @@ gem 'rails', '~> 3.0'
 gem 'coffee-rails'
 
 group :test, :development do
-  gem 'mas-development_dependencies',
-      path:    '../../',
-      require: ['mas/development_dependencies/konacha']
+  gem 'mas-development_dependencies', path: '../../'
 end
 
 group :test do
