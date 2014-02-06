@@ -20,6 +20,8 @@ module MAS
               exit 1 unless ::Konacha.run
             end
           end
+
+          task(:spec).enhance ['spec:javascript']
         end
       end if defined?(Rails::Railtie)
     end
