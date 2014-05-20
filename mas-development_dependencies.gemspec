@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'cucumber-rails'
   spec.add_dependency 'database_cleaner'
   spec.add_dependency 'factory_girl_rails', '~> 4.0'
-  spec.add_dependency 'konacha', '>= 3.0'
   spec.add_dependency 'poltergeist', '~> 1.3'
   spec.add_dependency 'pry-rails'
   spec.add_dependency 'pry-rescue'
