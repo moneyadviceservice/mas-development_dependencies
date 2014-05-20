@@ -1,5 +1,4 @@
-//= require spec_helper
-//= require cow
+
 
 describe("Cow", function () {
   describe("constructor", function () {

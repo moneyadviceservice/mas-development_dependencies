@@ -10,7 +10,11 @@ The gem provides setup for:
 
 * [Cucumber]
 * [RSpec]
-* [Konacha]
+* [Karma]
+
+Note:
+
+You will need to have Node installed to run Karma.
 
 ## Installation
 
@@ -44,16 +48,40 @@ $ rails generate money_advice_service:rspec:install
 You can then add custom project specific setup.
 
 
-### Konacha
+### Karma
 
 Run the generator:
 
 ```sh
-$ rails generate money_advice_service:konacha:install
+$ rails generate money_advice_service:karma:install
 ```
 
-You can then add custom project specific setup.
+Install the NPM modules:
 
+```sh
+$ rake karma:install
+```
+
+Run Karma Continously:
+
+```sh
+$ rake karma:run
+```
+
+Run Karma Once (Compatible with CI):
+
+```sh
+$ rake karma:run_once
+```
+
+You can configure the `spec/javascripts/karma.conf.js` file for project specific stuff. You can additionally require JS files sprockets style in the `spec/javascripts/application_spec.js` like so:
+
+```javascript
+/* Require your assets here */
+
+//= require jquery
+//= require cow
+```
 
 ## Contributing
 
@@ -64,5 +92,6 @@ You can then add custom project specific setup.
 5. Create new Pull Request
 
 [cucumber]: https://github.com/cucumber/cucumber
-[konacha]: https://github.com/jfirebaugh/konacha
+[karma]: http://karma-runner.github.io/0.12/index.html
 [rspec]: https://github.com/rspec
+[node]: http://nodejs.org/
