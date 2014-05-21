@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'pry-rails'
   spec.add_dependency 'pry-rescue'
   spec.add_dependency 'rack-livereload'
-  spec.add_dependency 'rspec-rails', '~> 2.0'
+  spec.add_dependency 'rspec-rails', '>= 2.0'
   spec.add_dependency 'shoulda-matchers'
   spec.add_dependency 'site_prism'
   spec.add_dependency 'timecop'
