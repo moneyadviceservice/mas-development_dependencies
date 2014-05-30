@@ -29,7 +29,13 @@ module MAS
 
 
             def with_tmp_config(command, args = nil)
-              Tempfile.open('karma_unit.js', Rails.root.join('tmp') ) do |f|
+              $stderr.puts "--------------------------------------------------------------------------------------------"
+              $stderr.puts "CAUTION: this rake task only works when run from the immediate parent of your spec directory"
+              $stderr.puts "--------------------------------------------------------------------------------------------"
+              $stderr.puts
+
+              FileUtils.mkdir('tmp') unless Dir.exists?('tmp')
+              Tempfile.open('karma_unit.js', File.expand_path('tmp')) do |f|
                 f.write unit_js(application_spec_files)
                 f.flush
                 system "./node_modules/karma/bin/karma #{command} #{f.path} #{args}"
@@ -38,8 +44,8 @@ module MAS
 
             def application_spec_files
               sprockets = Rails.application.assets
-              sprockets.append_path Rails.root.join("spec/javascripts")
-              Rails.application.assets.find_asset("application_spec.js").to_a.map {|e| e.pathname.to_s }
+              sprockets.append_path File.expand_path("spec/javascripts")
+              sprockets.find_asset("application_spec.js").to_a.map {|e| e.pathname.to_s }
             end
 
             def unit_js(files)
