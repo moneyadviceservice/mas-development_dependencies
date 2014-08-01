@@ -22,6 +22,8 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered                 = true
   config.filter_run :focus
 
+  config.infer_spec_type_from_file_location! if config.respond_to?(:infer_spec_type_from_file_location!)
+
   config.before(:each) do
     I18n.locale = :en
   end
