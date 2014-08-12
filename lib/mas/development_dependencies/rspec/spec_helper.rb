@@ -1,22 +1,22 @@
-require 'rspec/rails'
+require 'rspec/rails' if defined?(Rails)
 require 'shoulda-matchers'
 require 'timecop'
 
 # this seems to be required for the CI to work properly
 ENV['TZ'] = 'Europe/London'
-Time.zone = 'London'
+Time.zone = 'London' if defined?(ActiveSupport::TimeZone)
 
 # path relative to the Dummy app, which is by convention at spec/dummy
-Dir[Rails.root.join('./../support/**/*.rb')].each { |f| require f }
-Dir[Rails.root.join('./../factories/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('./../support/**/*.rb')].each { |f| require f } if defined?(Rails)
+Dir[Rails.root.join('./../factories/**/*.rb')].each { |f| require f } if defined?(Rails)
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods if defined?(FactoryGirl)
   config.include Devise::TestHelpers, :type => :controller if defined?(Devise)
-  config.include Rails.application.routes.url_helpers
+  config.include Rails.application.routes.url_helpers if defined?(Rails)
 
   config.use_transactional_fixtures                       = true if defined?(ActiveRecord)
-  config.infer_base_class_for_anonymous_controllers       = false
+  config.infer_base_class_for_anonymous_controllers       = false if defined?(Rails)
   config.order                                            = 'random'
   config.treat_symbols_as_metadata_keys_with_true_values  = true
   config.run_all_when_everything_filtered                 = true
@@ -25,7 +25,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location! if config.respond_to?(:infer_spec_type_from_file_location!)
 
   config.before(:each) do
-    I18n.locale = :en
+    I18n.locale = :en if defined?(I18n)
   end
 
   config.after(:each) do
