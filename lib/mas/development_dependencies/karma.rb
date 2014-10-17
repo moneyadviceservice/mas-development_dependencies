@@ -38,7 +38,7 @@ module MAS
               Tempfile.open('karma_unit.js', File.expand_path('tmp')) do |f|
                 f.write unit_js(application_spec_files)
                 f.flush
-                system "./node_modules/karma/bin/karma #{command} #{f.path} #{args}"
+                sh "./node_modules/karma/bin/karma #{command} #{f.path} #{args}"
               end
             end
 
@@ -55,7 +55,7 @@ module MAS
             end
 
             def install_modules
-              system "npm install"
+              sh "npm install"
             end
 
           end
