@@ -8,9 +8,6 @@ Rake tasks to run tests.
 
 The gem provides setup for:
 
-* [Cucumber]
-* [RSpec]
-* [Karma]
 
 Note:
 
@@ -24,63 +21,6 @@ Add the gem in the Gemfile:
 group :development, :test do
   gem 'mas-development_dependencies'
 end
-```
-
-### Cucumber
-
-Run the generator:
-
-```sh
-$ rails generate money_advice_service:cucumber:install
-```
-
-You can then add custom project specific setup.
-
-
-### RSpec
-
-Run the generator:
-
-```sh
-$ rails generate money_advice_service:rspec:install
-```
-
-You can then add custom project specific setup.
-
-
-### Karma
-
-Run the generator:
-
-```sh
-$ rails generate money_advice_service:karma:install
-```
-
-Install the NPM modules:
-
-```sh
-$ rake karma:install
-```
-
-Run Karma Continously:
-
-```sh
-$ rake karma:run
-```
-
-Run Karma Once (Compatible with CI):
-
-```sh
-$ rake karma:run_once
-```
-
-You can configure the `spec/javascripts/karma.conf.js` file for project specific stuff. You can additionally require JS files sprockets style in the `spec/javascripts/application_spec.js` like so:
-
-```javascript
-/* Require your assets here */
-
-//= require jquery
-//= require cow
 ```
 
 ## Contributing
