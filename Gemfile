@@ -3,4 +3,4 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'mas-build', '~> 1.3'
+gem 'mas-build', '~> 2.2.0.50'
