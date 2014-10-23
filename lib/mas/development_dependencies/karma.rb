@@ -5,10 +5,6 @@ module MAS
     module Karma
       class Railtie < Rails::Railtie
 
-        generators do
-          require File.expand_path('../../../generators/karma/install', __FILE__)
-        end
-
         rake_tasks do
           namespace :karma  do
 

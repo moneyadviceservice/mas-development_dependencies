@@ -2,10 +2,6 @@ module MAS
   module DevelopmentDependencies
     module Cucumber
       class Railtie < Rails::Railtie
-        generators do
-          require File.expand_path('../../../generators/cucumber/install', __FILE__)
-        end
-
         rake_tasks do
           require 'cucumber/rake/task'
 
