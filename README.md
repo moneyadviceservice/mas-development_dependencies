@@ -11,6 +11,7 @@ The gem provides setup for:
 * [Cucumber]
 * [RSpec]
 * [Karma]
+* [Rubocop]
 
 Note:
 
@@ -81,6 +82,14 @@ You can configure the `spec/javascripts/karma.conf.js` file for project specific
 
 //= require jquery
 //= require cow
+```
+
+### Rubocop
+
+Run the generator:
+
+```sh
+$ rails generate money_advice_service:rubocop:install
 ```
 
 ## Contributing
