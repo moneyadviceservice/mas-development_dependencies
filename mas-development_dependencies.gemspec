@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mas/development_dependencies/version'
+require 'version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'mas-development_dependencies'
-  spec.version       = MAS::DevelopmentDependencies::Version::STRING
+  spec.version       = DevelopmentDependencies::Version::STRING
   spec.authors       = ['Money Advice Service']
   spec.email         = ['']
   spec.description   = %q{Development dependencies management and setup}
