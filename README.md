@@ -1,17 +1,6 @@
 # MAS Development Dependencies
 
-This gem provides shared setup and development dependencies management for
-Money Advice Service projects. It provides common test framework setup and
-Rake tasks to run tests.
-
-## Content
-
-The gem provides setup for:
-
-
-Note:
-
-You will need to have Node installed to run Karma.
+This gem provides central point for all settings used within MAS.
 
 ## Installation
 
@@ -22,6 +11,17 @@ group :development, :test do
   gem 'mas-development_dependencies'
 end
 ```
+
+## Generators
+
+#### Rubocop
+
+  linting for our Ruby projects. Allowing all projects that use this gem to easily addopt the coding standards within
+  MAS.
+  
+  The gem already include rubocop and a generator to copy the standardised rubocop.yml file.
+
+  `bundle exec rails g money_advice_service:rubocop:install`
 
 ## Contributing
 
