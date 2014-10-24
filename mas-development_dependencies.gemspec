@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
   spec.version       = DevelopmentDependencies::Version::STRING
   spec.authors       = ['Money Advice Service']
   spec.email         = ['']
-  spec.description   = %q{Development dependencies management and setup}
-  spec.summary       = %q{Central place to manage gems and other setup for all Money Advice Service development project.}
+  spec.description   = 'Development dependencies management and setup'
+  spec.summary       = 'Home of all standardised settings for all Money Advice Service development project.'
   spec.homepage      = ''
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = `git ls-files`.split($RS)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
