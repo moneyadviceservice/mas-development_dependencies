@@ -43,3 +43,5 @@ AllCops:
   - 'tmp/**/*'
   - 'vendor/**/*'
   - 'Rakefile'
+  - 'spec/dummy/config/**/*'
+  - 'spec/dummy/script/**/*'
