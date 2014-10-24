@@ -1,20 +1,6 @@
 # MAS Development Dependencies
 
-This gem provides shared setup and development dependencies management for
-Money Advice Service projects. It provides common test framework setup and
-Rake tasks to run tests.
-
-## Content
-
-The gem provides setup for:
-
-* [Cucumber]
-* [RSpec]
-* [Karma]
-
-Note:
-
-You will need to have Node installed to run Karma.
+This gem provides central point for all settings used within MAS.
 
 ## Installation
 
@@ -26,62 +12,16 @@ group :development, :test do
 end
 ```
 
-### Cucumber
+## Generators
 
-Run the generator:
+#### Rubocop
 
-```sh
-$ rails generate money_advice_service:cucumber:install
-```
+  linting for our Ruby projects. Allowing all projects that use this gem to easily addopt the coding standards within
+  MAS.
+  
+  The gem already include rubocop and a generator to copy the standardised rubocop.yml file.
 
-You can then add custom project specific setup.
-
-
-### RSpec
-
-Run the generator:
-
-```sh
-$ rails generate money_advice_service:rspec:install
-```
-
-You can then add custom project specific setup.
-
-
-### Karma
-
-Run the generator:
-
-```sh
-$ rails generate money_advice_service:karma:install
-```
-
-Install the NPM modules:
-
-```sh
-$ rake karma:install
-```
-
-Run Karma Continously:
-
-```sh
-$ rake karma:run
-```
-
-Run Karma Once (Compatible with CI):
-
-```sh
-$ rake karma:run_once
-```
-
-You can configure the `spec/javascripts/karma.conf.js` file for project specific stuff. You can additionally require JS files sprockets style in the `spec/javascripts/application_spec.js` like so:
-
-```javascript
-/* Require your assets here */
-
-//= require jquery
-//= require cow
-```
+  `bundle exec rails g money_advice_service:rubocop:install`
 
 ## Contributing
 
